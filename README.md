@@ -1,5 +1,5 @@
 # ANCHORE - AZURE DEVOPS
-##  Requisitos 
+## Requisitos 
  - Contar con un sistema operativo ( Ubuntu ).
  - Generar un Personal Access Tokens.
 ## Creación de Agent Pool
@@ -15,7 +15,7 @@
 
  Crearemos un directorio nuevo y nos dirigimos a él.
  
-    sudo mkdir/opt/myagent && cd /opt/myagent
+    sudo mkdir /opt/myagent && cd /opt/myagent
 
  Luego ejecutamos el siguiente comando para descargar los archivos necesarios.
  
@@ -38,4 +38,39 @@
 Como último paso ejecutamos el script `run.sh`
 
     ./run.sh
+
+##Crear un servicio para ejecutar el agente ( Opcional ).
+
+Al crear un servicio nos aseguramos que el agente se mantendra siempre activo baja cualquier incidente.
+
+Primero creamos un archivo .service con el editor de tu preferencia ( `neovim` ).
+
+    sudo nvim /etc/systemd/system/agent.service
+
+Luego pegamos la siguiente configuración:
+
+```
+[Unit]
+Description=Agent anchore
+After=network.target
+
+[Service]
+User=jose
+WorkingDirectory=/opt/myagent
+ExecStart=/opt/myagent/run.sh start
+ExecStop=/opt/myagent/run.sh stop
+TimeoutSec=30
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Los siguientes comandos nos servirán para interactuar con el servicio:
+
+ - Iniciar: `sudo systemctl start agent.service`.
+ - Estado: `sudo systemctl status agent.service`.
+ - Persistir: `sudo systemctl enable agent.service`.
+ - Detener: `sudo systemctl stop agent.service`.
 
