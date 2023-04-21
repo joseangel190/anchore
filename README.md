@@ -50,6 +50,21 @@ Como último paso ejecutamos el script `run.sh`.
 
 Al crear un servicio nos aseguramos que el agente se mantendra siempre activo baja cualquier incidente.
 
+### Usando el script `svc.sh`.
+
+ Para instalarlo utilizamos el siguiente comando:
+
+    sudo ./svc.sh install $USER
+
+Opciones:
+
+ - Iniciar: `sudo  ./svc.sh start`.
+ - Estado: `sudo ./svc.sh status`.
+ - Detener: `sudo ./svc.sh stop`.
+ - Eliminar: `sudo ./svc.sh uninstall`.
+
+### De manera manual.
+
 Primero creamos un archivo de servicio con el editor de tu preferencia ( `neovim` ).
 
     sudo nvim /etc/systemd/system/agent.service
