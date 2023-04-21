@@ -50,7 +50,7 @@ Como último paso ejecutamos el script `run.sh`.
 
 Al crear un servicio nos aseguramos que el agente se mantendra siempre activo baja cualquier incidente.
 
-Primero creamos un archivo de service con el editor de tu preferencia ( `neovim` ).
+Primero creamos un archivo de servicio con el editor de tu preferencia ( `neovim` ).
 
     sudo nvim /etc/systemd/system/agent.service
 
@@ -80,4 +80,11 @@ Los siguientes comandos nos servirán para interactuar con el servicio:
  - Estado: `sudo systemctl status agent.service`.
  - Persistir: `sudo systemctl enable agent.service`.
  - Detener: `sudo systemctl stop agent.service`.
+
+## Corrección de errores:
+
+ - Validar la `fecha y hora` de sistema operativo o máquina virtual donde se va a alojar el agente.
+ - En caso de no de poder ejecutar el script `config.sh` utilizar:
+ 
+        sudo chmod -R 777 /opt/myagent/
 
