@@ -33,7 +33,7 @@
 
  Ejecutamos el siguiente script `config.sh`.
  
-    ./config.sh
+    sudo ./config.sh
 
  Una vez inicie nos pedirá los siguiente datos:
 
@@ -41,10 +41,14 @@
  2. Tu `Personal Access Tokens`.
  3. El nombre de tu `Agent tool` donde se va a alojar tu agente.
  4. También te pedirá si tu agente opta por tomar el nombre de tu host o darle un nombre de tu preferencia ( Opcional ).
- 
+
+Como alternativa puedes utilizar el siguiente comando, pasando como argumentos lo anteriormente mencionado:
+
+    sudo ./config.sh --unattended --url `<Organization>` --auth pat --token `<Personal-Access-Tokens>` --pool `<Agent-Pool>` --agent `<Agent>` --work /opt/myagent/
+
 Como último paso ejecutamos el script `run.sh`.
 
-    ./run.sh
+    sudo ./run.sh
 
 ## Crear un servicio para ejecutar el agente ( Opcional ).
 
