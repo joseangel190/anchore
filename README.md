@@ -44,7 +44,7 @@
 
 Como alternativa puedes utilizar el siguiente comando, pasando como argumentos lo anteriormente mencionado:
 
-    sudo ./config.sh --unattended --url `<Organization>` --auth pat --token `<Personal-Access-Tokens>` --pool `<Agent-Pool>` --agent `<Agent>` --work /opt/myagent/
+    sudo ./config.sh --unattended --url <Organization> --auth pat --token <Personal-Access-Tokens> --pool <Agent-Pool> --agent <Agent> --work /opt/myagent/
 
 Como último paso ejecutamos el script `run.sh`.
 
