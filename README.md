@@ -100,6 +100,12 @@ Los siguientes comandos nos servirán para interactuar con el servicio:
  - Persistir: `sudo systemctl enable agent.service`.
  - Detener: `sudo systemctl stop agent.service`.
 
+## Sistemas Operativos basados en .rmp => Centos, Fedora, etc. ( Opcional )
+
+En este caso se deberá ejecutar el siguiente script alojado en la carpeta `bin/`:
+
+    sudo ./bin/installdependencies.sh
+
 ## Corrección de errores:
 
  - Validar la `fecha y hora` de sistema operativo o máquina virtual donde se va a alojar el agente.
