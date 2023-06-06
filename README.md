@@ -100,7 +100,7 @@ Los siguientes comandos nos servirán para interactuar con el servicio:
  - Persistir: `sudo systemctl enable agent.service`.
  - Detener: `sudo systemctl stop agent.service`.
 
-## Sistemas Operativos basados en .rmp => Centos, Fedora, etc. ( Opcional )
+## Sistemas Operativos basados en .rpm => Centos, Fedora, etc. ( Opcional )
 
 En este caso se deberá ejecutar el siguiente script alojado en la carpeta `bin/`:
 
